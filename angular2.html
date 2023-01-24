@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+    <!-- formulário de email com aviso de erro  -->
+    <form name="form">
+        E-mail: <input type="email" name="email" ng-model="text">
+        <span ng-show="form.email.$error.email">Digite um email valido!</span>
+    </form>
+
+    <style>
+        input.ng-invalid{
+            background-color: rgb(223, 137, 137);
+        }
+    </style>
+    <!-- fim do formulário de email com aviso de erro  -->
+
+    <!-- Criando uma área de seleção de conteúdo  -->
+
+    <form>
+        Escolha um topico:
+        <input type="radio" ng-model="opcao" value="cachorros">Cachorros
+        <input type="radio" ng-model="opcao" value="gatos">Gatos
+        <input type="radio" ng-model="opcao" value="passaros">Passaros
+    </form>
+
+    <div ng-switch="opcao">
+        <div ng-switch-when="cachorros">
+            <h1>Cachorros</h1>
+            <p>Bem-vindo a um mundo de caes.</p>
+        </div>
+
+        <div ng-switch-when="gatos">
+            <h1>Gatos</h1>
+            <p>Bem-vindo a um mundo de gatos.</p>
+        </div>
+
+        <div ng-switch-when="passaros">
+            <h1>Passaros</h1>
+            <p>Bem-vindo a um mundo de passaros.</p>
+        </div>
+
+        <!-- fim da área de seleção de conteúdo  -->
+    </div>
+</body>
+</html>

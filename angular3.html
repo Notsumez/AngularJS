@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <!-- criando um botão que revela conteúdo  -->
+    <div ng-app="meuapp" ng-controller="controlador">
+        <button ng-click="minhaFuncao()">Menu</button>
+        <div ng-show="exibir">
+            <h1>Menu:</h1>
+            <h4>Pizza</h4>
+            <h4>Pasta</h4>
+            <h4>Peixe</h4>
+        </div>
+        <script>
+            var app = angular.module('meuapp',[]);
+            app.controller('controlador',function($scope){
+                $scope.exibir = false;
+                $scope.minhaFuncao = function(){
+                    $scope.exibir = !$scope.exibir;
+                }
+            });
+        </script>
+    </div>
+    <!-- fim do criando um botão que revela conteúdo  -->
+
+    
+</body>
+</html>
