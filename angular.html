@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+    <div ng-init="nomes=['Andrey','Mauricio','Braite','Lucas']">
+        <ul>
+            <li ng-repeat="y in nomes">
+                {{ y }}
+            </li>
+        </ul>
+    </div>
+
+    <div ng-init="cidades=['Maringa','Sao Paulo','Salvador','Maripora']">
+        <ul>
+            <li ng-repeat="y in cidades">
+                {{ y }}
+            </li>
+        </ul>
+    </div>
+
+    <div ng-init="nomes_cidade=[
+        {nome:'Douglas',cidade:'Sao Paulo'},
+        {nome:'Gabriel',cidade:'Guarulhos'},
+        {nome:'Vitor',cidade:'Mogi'},
+        {nome:'Lucas',cidade:'Sao Teodoro'}
+        ]">
+
+        <ul>
+            <li ng-repeat="x in nomes_cidade">
+                {{x.nome}} - {{x.cidade}}
+            </li>
+        </ul>
+    </div>
+    
+    <p>
+        NOME: <input type="text" ng-model="nome">
+    </p>
+
+    <h1>
+        Ola {{nome}}
+    </h1>
+</body>
+</html>
